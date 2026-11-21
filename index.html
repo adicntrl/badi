@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ru"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Тиньши — БАДы для красоты и самочувствия</title>
+<style>
+:root{--bg:#fff;--bg2:#f7f1e8;--mint:#dcf2e9;--acc:#2f8f74;--accd:#237259;--ink:#22312c;--mut:#62736d;--card:#fff;--line:#e9e3d9;--r:22px;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#101614;--bg2:#17201d;--mint:#1c2e28;--acc:#5cc2a3;--accd:#7dd6ba;--ink:#eaf2ee;--mut:#9db0a9;--card:#18211e;--line:#2a3833;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#101614;--bg2:#17201d;--mint:#1c2e28;--acc:#5cc2a3;--accd:#7dd6ba;--ink:#eaf2ee;--mut:#9db0a9;--card:#18211e;--line:#2a3833;color-scheme:dark}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 "Segoe UI",system-ui,-apple-system,Roboto,sans-serif}
+h1,h2,h3,.logo{font-family:Georgia,"Times New Roman",serif;font-weight:600;line-height:1.2;margin:0}
+a{color:inherit}
+.w{max-width:1120px;margin:0 auto;padding:0 18px}
+section{padding:56px 0}
+h2{font-size:clamp(26px,5vw,38px);margin-bottom:8px}
+.sub{color:var(--mut);margin:0 0 28px;max-width:560px}
+.btn{display:inline-block;border:0;border-radius:999px;background:var(--acc);color:#fff;font:600 15px inherit;font-family:inherit;padding:13px 26px;cursor:pointer;text-decoration:none;transition:.2s}
+.btn:hover{background:var(--accd)}
+.btn.o{background:transparent;color:var(--accd);border:1.5px solid var(--acc)}
+.btn.wa{background:#25a560}
+.note{background:var(--mint);color:var(--ink);text-align:center;font-size:13px;padding:8px 14px}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--bg);border-bottom:1px solid var(--line)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:30}
+.hd{display:flex;align-items:center;justify-content:space-between;height:62px}
+.logo{font-size:26px;color:var(--accd);text-decoration:none;letter-spacing:.5px}
+nav{display:flex;gap:22px}
+nav a{text-decoration:none;font-size:15px;color:var(--mut)}
+nav a:hover{color:var(--accd)}
+.cartb{position:relative;background:var(--mint);border:0;width:44px;height:44px;border-radius:50%;cursor:pointer;font-size:20px;color:var(--ink)}
+.cartb b{position:absolute;top:-4px;right:-4px;background:var(--acc);color:#fff;border-radius:99px;font-size:11px;min-width:19px;height:19px;line-height:19px;text-align:center}
+@media(max-width:640px){nav{display:none}}
+.mnav{display:none;overflow-x:auto;gap:8px;padding:8px 18px;border-bottom:1px solid var(--line)}
+.mnav a{white-space:nowrap;text-decoration:none;font-size:14px;background:var(--bg2);padding:6px 14px;border-radius:99px}
+@media(max-width:640px){.mnav{display:flex}}
+.hero{background:linear-gradient(160deg,var(--mint),var(--bg2));border-radius:0 0 40px 40px;padding:44px 0}
+.hg{display:grid;gap:28px;align-items:center}
+@media(min-width:800px){.hg{grid-template-columns:1.1fr 1fr}}
+.hero h1{font-size:clamp(32px,7vw,54px);margin-bottom:14px}
+.hero p{color:var(--mut);font-size:18px;margin:0 0 24px;max-width:460px}
+.hv{display:flex;justify-content:center;align-items:flex-end;gap:6px}
+.hv svg{width:30%;max-width:170px;filter:drop-shadow(0 14px 18px rgba(0,0,0,.12))}
+.hv svg:nth-child(2){width:38%;max-width:210px;margin-bottom:14px}
+.cats{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+@media(min-width:700px){.cats{grid-template-columns:repeat(3,1fr)}}
+.cat{background:var(--bg2);border:2px solid transparent;border-radius:var(--r);padding:20px 14px;text-align:center;cursor:pointer;font:inherit;color:var(--ink);transition:.2s}
+.cat:hover,.cat.on{border-color:var(--acc);background:var(--mint)}
+.cat i{display:block;font-style:normal;font-size:30px;margin-bottom:6px}
+.cat small{display:block;color:var(--mut);font-size:12px}
+.tools{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:22px}
+.tools input{flex:1 1 220px;border:1.5px solid var(--line);background:var(--card);color:var(--ink);border-radius:99px;padding:12px 18px;font:inherit}
+.chips{display:flex;gap:8px;overflow-x:auto;width:100%;padding-bottom:4px}
+.chip{white-space:nowrap;border:1.5px solid var(--line);background:var(--card);color:var(--ink);border-radius:99px;padding:8px 16px;cursor:pointer;font:inherit;font-size:14px}
+.chip.on{background:var(--acc);border-color:var(--acc);color:#fff}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+@media(min-width:760px){.grid{grid-template-columns:repeat(3,1fr);gap:20px}}
+@media(min-width:1000px){.grid{grid-template-columns:repeat(4,1fr)}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column}
+.ph{background:radial-gradient(circle at 50% 40%,var(--mint),var(--bg2));padding:16px 18px 8px;cursor:pointer}
+.ph svg{width:100%;max-height:170px;display:block}
+.cb{padding:14px;display:flex;flex-direction:column;gap:6px;flex:1}
+.cb h3{font-size:16px;cursor:pointer}
+.cb p{margin:0;color:var(--mut);font-size:13px;line-height:1.45;flex:1}
+.pr{font-weight:700;font-size:18px;margin-top:4px}
+.cb .btn{padding:10px;font-size:14px;width:100%}
+.empty{grid-column:1/-1;text-align:center;color:var(--mut);padding:30px}
+.adv{display:grid;gap:14px;grid-template-columns:repeat(2,1fr)}
+@media(min-width:800px){.adv{grid-template-columns:repeat(4,1fr)}}
+.ad{background:var(--bg2);border-radius:var(--r);padding:22px 16px}
+.ad i{font-style:normal;font-size:30px}
+.ad h3{font-size:17px;margin:8px 0 4px}
+.ad p{margin:0;color:var(--mut);font-size:14px}
+.sl{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:8px;scrollbar-width:none}
+.rv{flex:0 0 min(84%,340px);scroll-snap-align:start;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:22px}
+.rv .st{color:#e0a53a;letter-spacing:2px}
+.rv p{margin:10px 0 14px}
+.rv b{font-size:14px}
+.sn{display:flex;gap:8px;margin-top:14px}
+.sn button{width:44px;height:44px;border-radius:50%;border:1.5px solid var(--acc);background:transparent;color:var(--accd);font-size:18px;cursor:pointer}
+details{background:var(--bg2);border-radius:18px;padding:16px 20px;margin-bottom:10px}
+summary{cursor:pointer;font-weight:600}
+details p{margin:10px 0 0;color:var(--mut)}
+.fm{background:linear-gradient(160deg,var(--mint),var(--bg2));border-radius:32px;padding:30px 20px}
+.fm form,.ck{display:grid;gap:10px}
+input,textarea{width:100%;border:1.5px solid var(--line);background:var(--card);color:var(--ink);border-radius:16px;padding:12px 16px;font:inherit}
+.row{display:flex;gap:10px;flex-wrap:wrap;margin-top:6px}
+footer{background:var(--bg2);padding:40px 0 30px;font-size:14px;color:var(--mut)}
+.fg{display:grid;gap:22px}
+@media(min-width:760px){.fg{grid-template-columns:1.2fr 1fr 1fr}}
+footer h4{margin:0 0 8px;color:var(--ink)}
+.legal{border-top:1px solid var(--line);margin-top:24px;padding-top:16px;font-size:12px}
+.ov{position:fixed;inset:0;background:rgba(10,20,16,.5);z-index:50;display:none}
+.ov.on{display:block}
+.dr{position:absolute;right:0;top:0;bottom:0;width:min(100%,420px);background:var(--bg);padding:20px 18px calc(20px + env(safe-area-inset-bottom,0px));overflow-y:auto}
+.md{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:min(94%,560px);max-height:90%;overflow-y:auto;background:var(--bg);border-radius:28px;padding:22px}
+.x{float:right;background:var(--bg2);border:0;width:38px;height:38px;border-radius:50%;font-size:18px;cursor:pointer;color:var(--ink)}
+.li{display:grid;grid-template-columns:54px 1fr auto;gap:10px;align-items:center;padding:10px 0;border-bottom:1px solid var(--line);font-size:14px}
+.li svg{width:54px;background:var(--mint);border-radius:12px;padding:4px}
+.q{display:inline-flex;align-items:center;gap:8px;margin-top:4px}
+.q button{width:28px;height:28px;border-radius:50%;border:1px solid var(--line);background:var(--bg2);color:var(--ink);cursor:pointer}
+.tot{display:flex;justify-content:space-between;font-size:19px;font-weight:700;margin:16px 0}
+.md h4{margin:14px 0 2px;color:var(--accd);font-size:14px;text-transform:uppercase;letter-spacing:.5px}
+.md p{margin:0;color:var(--mut);font-size:14px}
+.warn{background:var(--mint);border-radius:14px;padding:10px 14px;font-size:13px;margin-top:14px}
+.ok{text-align:center;padding:30px 0}
+</style></head><body>
+<div class="note">БАД не является лекарственным средством. Перед применением проконсультируйтесь с врачом</div>
+<header><div class="w hd"><a class="logo" href="#top">Тиньши</a>
+<nav><a href="#catalog">Каталог</a><a href="#about">О нас</a><a href="#reviews">Отзывы</a><a href="#contacts">Контакты</a></nav>
+<button class="cartb" aria-label="Корзина" onclick="openCart()">🛍<b id="cnt">0</b></button></div></header>
+<div class="mnav"><a href="#catalog">Каталог</a><a href="#about">О нас</a><a href="#reviews">Отзывы</a><a href="#contacts">Контакты</a></div>
+<main id="top">
+<div class="hero"><div class="w hg"><div>
+<h1>Забота о себе — каждый день</h1>
+<p>Витамины и добавки с понятным составом для вашего ритма жизни, красоты и хорошего самочувствия.</p>
+<a class="btn" href="#catalog">Выбрать БАДы</a></div>
+<div class="hv" id="hv"></div></div></div>
+
+<section><div class="w"><h2>Категории</h2><p class="sub">Выберите, что вам сейчас ближе.</p><div class="cats" id="cats"></div></div></section>
+
+<section id="catalog" style="background:var(--bg)"><div class="w"><h2>Каталог</h2><p class="sub">Нажмите на товар, чтобы увидеть состав, способ применения и противопоказания.</p>
+<div class="tools"><input id="q" type="search" placeholder="Поиск: например, магний или коллаген"><div class="chips" id="chips"></div></div>
+<div class="grid" id="grid"></div></div></section>
+
+<section id="about" style="background:var(--bg2);border-radius:40px"><div class="w"><h2>Почему Тиньши</h2><p class="sub">Мы выбираем только те добавки, о которых готовы честно рассказать.</p>
+<div class="adv">
+<div class="ad" style="background:var(--card)"><i>📜</i><h3>Сертификаты качества</h3><p>Вся продукция проходит регистрацию и имеет документы соответствия.</p></div>
+<div class="ad" style="background:var(--card)"><i>🚚</i><h3>Быстрая доставка</h3><p>По Алматы — в день заказа, по Казахстану — 2–5 дней.</p></div>
+<div class="ad" style="background:var(--card)"><i>✅</i><h3>Оригинальная продукция</h3><p>Работаем напрямую с производителями и дистрибьюторами.</p></div>
+<div class="ad" style="background:var(--card)"><i>💬</i><h3>Поддержка</h3><p>Отвечаем в WhatsApp ежедневно с 9:00 до 21:00.</p></div></div></div></section>
+
+<section id="reviews"><div class="w"><h2>Отзывы клиенток</h2><p class="sub">Личный опыт наших покупательниц.</p>
+<div class="sl" id="sl"></div>
+<div class="sn"><button onclick="sl(-1)" aria-label="Назад">←</button><button onclick="sl(1)" aria-label="Вперёд">→</button></div></div></section>
+
+<section style="background:var(--bg2);border-radius:40px"><div class="w" style="max-width:760px"><h2>Частые вопросы</h2><p class="sub"></p>
+<details><summary>Как принимать БАДы?</summary><p>Способ применения указан на упаковке и на странице каждого товара. Не превышайте рекомендуемую дозу и обязательно проконсультируйтесь с врачом, особенно при беременности, кормлении грудью или приёме лекарств.</p></details>
+<details><summary>Как работает доставка и оплата?</summary><p>Доставляем по всему Казахстану курьером и почтой. По Алматы — в день заказа при оформлении до 15:00. Оплата — переводом, картой или наличными курьеру. Доставка от 15 000 ₸ бесплатная.</p></details>
+<details><summary>Можно ли вернуть товар?</summary><p>Да, если упаковка не вскрыта, а товар не был в употреблении — в течение 14 дней. Если привезли не то или с браком, заменим или вернём деньги.</p></details>
+<details><summary>Это лекарство?</summary><p>Нет. БАД не является лекарственным средством и не предназначен для лечения заболеваний. Это добавка к рациону.</p></details></div></section>
+
+<section id="contacts"><div class="w"><div class="fm"><h2>Оставьте заявку</h2><p class="sub">Подскажем с выбором и ответим на вопросы. Или напишите нам сразу в WhatsApp.</p>
+<form id="lead" style="max-width:520px"><input name="n" placeholder="Ваше имя" required><input name="p" type="tel" placeholder="Телефон" required><textarea name="m" rows="3" placeholder="Что вас интересует?"></textarea>
+<div class="row"><button class="btn" type="submit">Отправить заявку</button><a class="btn wa" id="wa" target="_blank" rel="noopener">Заказать в WhatsApp</a></div></form></div></div></section>
+</main>
+
+<footer><div class="w"><div class="fg">
+<div><div class="logo" style="font-size:24px;color:var(--accd)">Тиньши</div><p>Витамины и добавки для женщин, которые ценят себя.</p></div>
+<div><h4>Контакты</h4>+7 700 000 00 00<br>hello@tinshi.kz<br>Алматы, ежедневно 9:00–21:00</div>
+<div><h4>Мы в соцсетях</h4>Instagram · TikTok · Telegram</div></div>
+<div class="legal"><b>БАД не является лекарственным средством. Перед применением проконсультируйтесь с врачом.</b> Информация на сайте носит ознакомительный характер. ИП «Тиньши», БИН 000000000000. © 2026 Тиньши. Публичная оферта · Политика конфиденциальности.</div></div></footer>
+
+<div class="ov" id="ovc" onclick="if(event.target===this)closeAll()"><div class="dr"><button class="x" onclick="closeAll()">✕</button><h2 style="font-size:26px">Корзина</h2><div id="cl"></div></div></div>
+<div class="ov" id="ovm" onclick="if(event.target===this)closeAll()"><div class="md" id="md"></div></div>
+
+<script>
+var WA="77000000000";
+var C=[["vit","💊","Витамины"],["min","🌿","Минералы"],["omega","🐟","Омега и жиры"],["beauty","✨","Для красоты"],["women","🌸","Женское здоровье"],["immune","🍊","Иммунитет"]];
+var CS={vit:"",min:"",omega:"",beauty:"волосы, кожа, ногти",women:"",immune:""};
+var NO="Индивидуальная непереносимость компонентов. Беременным, кормящим и принимающим лекарства — только после консультации с врачом.";
+var P=[
+{id:1,c:"vit",n:"Витамин D3 2000 МЕ",d:"90 капсул на масляной основе",p:6900,col:"#f2c36b",t:"D3",comp:"Холекальциферол (D3) 2000 МЕ, масло оливковое, оболочка капсулы.",use:"По 1 капсуле в день во время еды."},
+{id:2,c:"vit",n:"Комплекс витаминов группы B",d:"Активные формы, 60 капсул",p:7400,col:"#e9a98f",t:"B",comp:"B1, B2, B3, B5, B6 (P-5-P), B9 (метафолин), B12 (метилкобаламин), биотин.",use:"По 1 капсуле в день утром во время еды."},
+{id:3,c:"immune",n:"Витамин C с шиповником",d:"500 мг, 90 таблеток",p:5600,col:"#f4a259",t:"C",comp:"Аскорбиновая кислота 500 мг, экстракт плодов шиповника.",use:"По 1 таблетке в день после еды."},
+{id:4,c:"min",n:"Магний B6 цитрат",d:"Для вечернего ритуала, 60 таблеток",p:6200,col:"#9ccfbd",t:"Mg",comp:"Магния цитрат 400 мг, витамин B6 (пиридоксин) 2 мг.",use:"По 1–2 таблетки в день во время еды, запивая водой."},
+{id:5,c:"min",n:"Цинк пиколинат 25 мг",d:"Хелатная форма, 90 капсул",p:5900,col:"#b9c8e6",t:"Zn",comp:"Цинка пиколинат 25 мг, целлюлоза, оболочка капсулы.",use:"По 1 капсуле в день во время еды."},
+{id:6,c:"omega",n:"Омега-3 1000 мг",d:"Рыбий жир из дикой рыбы, 90 капсул",p:11900,col:"#f0d98c",t:"Ω3",comp:"Рыбий жир, ЭПК 330 мг, ДГК 220 мг, витамин E.",use:"По 1 капсуле 1–2 раза в день во время еды."},
+{id:7,c:"beauty",n:"Коллаген + гиалуроновая кислота",d:"Порошок со вкусом ягод, 30 порций",p:14500,col:"#f3b5c4",t:"Col",comp:"Гидролизованный коллаген 5 г, гиалуроновая кислота, витамин C, ароматизатор.",use:"1 мерная ложка, растворить в 200 мл воды, раз в день."},
+{id:8,c:"beauty",n:"Биотин 5000 мкг + селен",d:"Для волос и ногтей, 60 капсул",p:8900,col:"#d8bff0",t:"Bio",comp:"Биотин 5000 мкг, селен 50 мкг, цинк 10 мг.",use:"По 1 капсуле в день во время еды."},
+{id:9,c:"women",n:"Фолат + масло примулы",d:"Для женского баланса, 60 капсул",p:9800,col:"#f7a8a0",t:"♀",comp:"Метафолин 400 мкг, масло примулы вечерней 500 мг, витамин E.",use:"По 1 капсуле 2 раза в день во время еды."},
+{id:10,c:"immune",n:"Эхинацея + цинк + C",d:"Для сезона простуд, 60 капсул",p:6700,col:"#c3dca0",t:"Imm",comp:"Экстракт эхинацеи, цинк 10 мг, витамин C 100 мг.",use:"По 1 капсуле в день во время еды."}];
+function bt(col,t){return '<svg viewBox="0 0 120 150" xmlns="http://www.w3.org/2000/svg"><rect x="38" y="6" width="44" height="24" rx="8" fill="#fff"/><rect x="26" y="26" width="68" height="112" rx="22" fill="'+col+'"/><rect x="33" y="56" width="54" height="52" rx="10" fill="#fff" opacity=".93"/><text x="60" y="81" text-anchor="middle" font-size="17" font-weight="700" fill="#22312c" font-family="Georgia,serif">'+t+'</text><text x="60" y="97" text-anchor="middle" font-size="9" fill="#62736d" font-family="sans-serif" letter-spacing="1">ТИНЬШИ</text></svg>'}
+var $=function(i){return document.getElementById(i)};
+var fmt=function(n){return n.toLocaleString("ru-RU")+" ₸"};
+var cat="all",cart={};
+$("hv").innerHTML=bt("#f3b5c4","Col")+bt("#9ccfbd","Mg")+bt("#f2c36b","D3");
+$("cats").innerHTML=C.map(function(c){var k=P.filter(function(p){return p.c==c[0]}).length;return '<button class="cat" data-c="'+c[0]+'"><i>'+c[1]+'</i>'+c[2]+'<small>'+(CS[c[0]]||k+" товара")+'</small></button>'}).join("");
+$("chips").innerHTML='<button class="chip on" data-c="all">Все</button>'+C.map(function(c){return '<button class="chip" data-c="'+c[0]+'">'+c[2]+'</button>'}).join("");
+function setCat(c){cat=c;document.querySelectorAll(".chip").forEach(function(b){b.classList.toggle("on",b.dataset.c==c)});document.querySelectorAll(".cat").forEach(function(b){b.classList.toggle("on",b.dataset.c==c)});draw()}
+document.addEventListener("click",function(e){var b=e.target.closest("[data-c]");if(!b)return;setCat(cat==b.dataset.c&&b.classList.contains("cat")?"all":b.dataset.c);if(b.classList.contains("cat"))location.hash="catalog"});
+$("q").oninput=draw;
+function draw(){var s=$("q").value.trim().toLowerCase();var L=P.filter(function(p){return(cat=="all"||p.c==cat)&&(p.n+" "+p.d).toLowerCase().indexOf(s)>-1});
+$("grid").innerHTML=L.length?L.map(function(p){return '<div class="card"><div class="ph" onclick="show('+p.id+')">'+bt(p.col,p.t)+'</div><div class="cb"><h3 onclick="show('+p.id+')">'+p.n+'</h3><p>'+p.d+'</p><div class="pr">'+fmt(p.p)+'</div><button class="btn" onclick="add('+p.id+')">В корзину</button></div></div>'}).join(""):'<div class="empty">Ничего не нашли. Попробуйте другой запрос.</div>'}
+draw();
+function show(id){var p=P.filter(function(x){return x.id==id})[0];
+$("md").innerHTML='<button class="x" onclick="closeAll()">✕</button><div class="ph" style="border-radius:20px;cursor:default;max-width:200px;margin:0 auto 12px">'+bt(p.col,p.t)+'</div><h2 style="font-size:26px">'+p.n+'</h2><p>'+p.d+'</p><div class="pr" style="font-size:22px;margin:8px 0">'+fmt(p.p)+'</div><h4>Состав</h4><p>'+p.comp+'</p><h4>Способ применения</h4><p>'+p.use+'</p><h4>Противопоказания</h4><p>'+NO+'</p><div class="warn">БАД не является лекарственным средством. Перед применением проконсультируйтесь с врачом.</div><button class="btn" style="width:100%;margin-top:14px" onclick="add('+p.id+');closeAll();openCart()">В корзину</button>';
+$("ovm").classList.add("on")}
+function add(id){cart[id]=(cart[id]||0)+1;upd()}
+function chg(id,d){cart[id]+=d;if(cart[id]<1)delete cart[id];upd()}
+function tot(){return Object.keys(cart).reduce(function(s,k){return s+cart[k]*P.filter(function(p){return p.id==k})[0].p},0)}
+function upd(){$("cnt").textContent=Object.keys(cart).reduce(function(s,k){return s+cart[k]},0);if($("ovc").classList.contains("on"))openCart()}
+function openCart(){var ks=Object.keys(cart),h="";
+if(!ks.length){h='<p style="color:var(--mut)">Пока пусто. Загляните в каталог — мы подскажем с выбором.</p>'}else{
+h=ks.map(function(k){var p=P.filter(function(x){return x.id==k})[0];return '<div class="li">'+bt(p.col,p.t)+'<div><b>'+p.n+'</b><br>'+fmt(p.p)+'<div class="q"><button onclick="chg('+k+',-1)">−</button>'+cart[k]+'<button onclick="chg('+k+',1)">+</button></div></div><div><b>'+fmt(p.p*cart[k])+'</b></div></div>'}).join("")+
+'<div class="tot"><span>Итого</span><span>'+fmt(tot())+'</span></div><form class="ck" id="ck"><input name="n" placeholder="Имя" required><input name="p" type="tel" placeholder="Телефон" required><input name="a" placeholder="Адрес доставки" required><textarea name="m" rows="2" placeholder="Комментарий к заказу"></textarea><button class="btn" type="submit">Оформить заказ</button><p style="font-size:12px;color:var(--mut);margin:0">Заказ откроется в WhatsApp — останется нажать «Отправить». БАД не является лекарственным средством.</p></form>'}
+$("cl").innerHTML=h;$("ovc").classList.add("on");
+var f=$("ck");if(f)f.onsubmit=function(e){e.preventDefault();var d=new FormData(f);
+var t="Новый заказ Тиньши%0A"+Object.keys(cart).map(function(k){var p=P.filter(function(x){return x.id==k})[0];return p.n+" × "+cart[k]+" = "+fmt(p.p*cart[k])}).join("%0A")+"%0AИтого: "+fmt(tot())+"%0AИмя: "+d.get("n")+"%0AТелефон: "+d.get("p")+"%0AАдрес: "+d.get("a")+"%0AКомментарий: "+(d.get("m")||"—");
+window.open("https://wa.me/"+WA+"?text="+t.replace(/ /g,"%20").replace(/₸/g,"%E2%82%B8"),"_blank");
+cart={};$("cnt").textContent=0;$("cl").innerHTML='<div class="ok"><div style="font-size:44px">🌿</div><h3>Спасибо за заказ!</h3><p style="color:var(--mut)">Мы свяжемся с вами для подтверждения.</p></div>'}}
+function closeAll(){$("ovc").classList.remove("on");$("ovm").classList.remove("on")}
+var R=[["Айгерим, 28","Заказывала магний и D3. Нравится, что состав честно расписан и консультанты не навязывают лишнего. Упаковка красивая, доставили за день."],["Дана, 34","Коллаген в порошке растворяется без комков, вкус приятный. Пью уже второй месяц, вошло в утреннюю привычку."],["Мадина, 25","Долго искала витамины с понятным составом. Здесь всё подробно, ответили в WhatsApp за 10 минут. Буду заказывать ещё."],["Алия, 31","Омега-3 без неприятного привкуса, капсулы небольшие. Курьер приехал вовремя, всё оригинальное."]];
+$("sl").innerHTML=R.map(function(r){return '<div class="rv"><div class="st">★★★★★</div><p>'+r[1]+'</p><b>'+r[0]+'</b></div>'}).join("");
+function sl(d){$("sl").scrollBy({left:d*300,behavior:"smooth"})}
+$("wa").href="https://wa.me/"+WA+"?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D0%BA%D0%B0%D0%B7%D0%B0%D1%82%D1%8C%20%D0%91%D0%90%D0%94%D1%8B%20%D0%B2%20%D0%A2%D0%B8%D0%BD%D1%8C%D1%88%D0%B8.";
+$("lead").onsubmit=function(e){e.preventDefault();var d=new FormData(this);window.open("https://wa.me/"+WA+"?text="+encodeURIComponent("Заявка с сайта Тиньши\nИмя: "+d.get("n")+"\nТелефон: "+d.get("p")+"\n"+(d.get("m")||"")),"_blank");this.innerHTML='<div class="ok"><div style="font-size:40px">🌸</div><h3>Спасибо!</h3><p>Мы скоро свяжемся с вами.</p></div>'};
+</script></body></html>
